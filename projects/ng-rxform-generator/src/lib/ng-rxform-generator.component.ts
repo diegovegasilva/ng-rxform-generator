@@ -22,7 +22,7 @@ import { isEqual } from './utils/utils';
 
 @Component({
   selector: 'rxf-ng-rxform-generator',
-  templateUrl: './form-generator.component.html',
+  templateUrl: './ng-rxform-generator.component.html',
   styles: []
 })
 export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
@@ -40,7 +40,6 @@ export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.createForm();
     this.getOriginalValues();
-    this.e;
     this.formSub = this.form.valueChanges
       .pipe(
         debounceTime(500),
@@ -64,7 +63,7 @@ export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
 
   createFormObject() {
     const formObject = {};
-    _.each(this.fields, field => {
+    this.fields.forEach(field => {
       formObject[field.key] = new FormControl(
         { value: field.value || '', disabled: field.disabled },
         this.addValidators(field.validators)
@@ -76,7 +75,7 @@ export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
 
   addValidators(validationData: any[]): any[] {
     const validatiors = [];
-    _.each(validationData, val => {
+    validationData.forEach(val => {
       validatiors.push(Validators[val.type]);
     });
     return validatiors;
