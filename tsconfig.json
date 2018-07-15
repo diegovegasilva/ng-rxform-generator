@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-rxform-generator": [
+        "dist/ng-rxform-generator"
+      ],
+      "ng-rxform-generator/*": [
+        "dist/ng-rxform-generator/*"
+      ]
+    }
   }
 }
