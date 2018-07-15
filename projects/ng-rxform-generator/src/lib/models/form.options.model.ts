@@ -9,6 +9,7 @@ export interface RxFormGeneratorOptions<T> {
   value?: T;
   key?: string;
   inputType?: InputType;
+  useMaterial?: boolean;
   type?: FieldType;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
