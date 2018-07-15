@@ -7,22 +7,23 @@ export type InputType =
   | 'date'
   | 'number'
   | 'slideToggle';
+
 export type FieldType =
   | 'text'
   | 'password'
   | 'tel'
   | 'email'
-  | 'textarea'
-  | 'radio'
-  | 'checkbox'
-  | 'select'
   | 'hidden'
   | 'range'
-  | 'date'
-  | 'number'
   | 'file'
   | 'color'
+  | 'date'
+  | 'datetime'
+  | 'datetime-local'
+  | 'month'
+  | 'week'
   | 'time';
+
 export type FieldValidation =
   | 'required'
   | 'requiredTrue'
