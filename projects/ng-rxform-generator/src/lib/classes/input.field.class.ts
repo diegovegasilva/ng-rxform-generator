@@ -8,7 +8,7 @@ export class RxFormGeneratorInput extends RxFormGeneratorField<
   inputType: InputType = 'text';
   fieldType: FieldType;
 
-  constructor(options: RxFormGeneratorOptions<string | number> = {}) {
+  constructor(options: RxFormGeneratorOptions<string | number>) {
     super(options);
     this.fieldType = options['fieldType'] || 'text';
   }

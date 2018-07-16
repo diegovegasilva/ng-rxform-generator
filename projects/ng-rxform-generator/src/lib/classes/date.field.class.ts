@@ -9,7 +9,7 @@ export class RxFormGeneratorDate extends RxFormGeneratorField<string> {
   max;
   step: number;
 
-  constructor(options: RxFormGeneratorOptions<string> = {}) {
+  constructor(options: RxFormGeneratorOptions<string>) {
     super(options);
     this.fieldType = options['fieldType'] || 'date';
     this.min = options['min'] !== undefined ? options['min'] : '';

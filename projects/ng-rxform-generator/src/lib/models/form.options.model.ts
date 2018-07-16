@@ -7,7 +7,7 @@ import { RxFormGeneratorSelectOptions } from './form.selectOptions.model';
 
 export interface RxFormGeneratorOptions<T> {
   value?: T;
-  key?: string;
+  key: string;
   inputType?: InputType;
   useMaterial?: boolean;
   fieldType?: FieldType;

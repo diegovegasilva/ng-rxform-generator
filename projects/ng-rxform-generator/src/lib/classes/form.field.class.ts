@@ -20,7 +20,7 @@ export class RxFormGeneratorField<T> {
   options: Observable<any>;
   optionKeys: RxFormGeneratorSelectOptions;
 
-  constructor(options: RxFormGeneratorOptions<T> = {}) {
+  constructor(options: RxFormGeneratorOptions<T>) {
     this.value = options.value;
     this.key = options.key;
     this.inputType = options.inputType;

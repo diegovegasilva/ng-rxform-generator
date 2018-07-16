@@ -9,7 +9,7 @@ export class RxFormGeneratorInputNumber extends RxFormGeneratorField<string | nu
   max;
   step: number;
 
-  constructor(options: RxFormGeneratorOptions<string | number> = {}) {
+  constructor(options: RxFormGeneratorOptions<string | number>) {
     super(options);
     this.min = options['min'] !== undefined ?  options['min'] : '';
     this.max = options['max'] !== undefined ?  options['max'] : '';

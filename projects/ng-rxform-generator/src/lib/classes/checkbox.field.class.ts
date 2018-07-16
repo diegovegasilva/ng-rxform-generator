@@ -5,7 +5,7 @@ import { RxFormGeneratorField } from './form.field.class';
 export class RxFormGeneratorCheckbox extends RxFormGeneratorField<boolean> {
   inputType: InputType = 'checkbox';
 
-  constructor(options: RxFormGeneratorOptions<boolean> = {}) {
+  constructor(options: RxFormGeneratorOptions<boolean>) {
     super(options);
   }
 }

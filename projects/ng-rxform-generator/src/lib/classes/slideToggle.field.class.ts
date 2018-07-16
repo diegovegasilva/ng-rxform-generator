@@ -5,7 +5,7 @@ import { RxFormGeneratorField } from './form.field.class';
 export class RxFormGeneratorSlideToggle extends RxFormGeneratorField<boolean> {
   inputType: InputType = 'slideToggle';
 
-  constructor(options: RxFormGeneratorOptions<boolean> = {}) {
+  constructor(options: RxFormGeneratorOptions<boolean>) {
     super(options);
   }
 }

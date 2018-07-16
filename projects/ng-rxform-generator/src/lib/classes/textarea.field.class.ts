@@ -6,7 +6,7 @@ import { RxFormGeneratorField } from './form.field.class';
 export class RxFormGeneratorTextarea extends RxFormGeneratorField<string> {
   inputType: InputType = 'textarea';
 
-  constructor(options: RxFormGeneratorOptions<string> = {}) {
+  constructor(options: RxFormGeneratorOptions<string>) {
     super(options);
   }
 }
