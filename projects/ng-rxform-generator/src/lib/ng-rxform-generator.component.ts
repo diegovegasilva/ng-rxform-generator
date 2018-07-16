@@ -33,11 +33,12 @@ export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
   formSub: Subscription;
   formModified = false;
   originalValues = {};
-  errorMsg: errorMsg;
+  errorMsg;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
+    this.errorMsg = errorMsg;
     this.createForm();
     this.getOriginalValues();
     this.formSub = this.form.valueChanges

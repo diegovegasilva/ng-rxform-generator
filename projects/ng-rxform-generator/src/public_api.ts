@@ -4,3 +4,4 @@
 
 export * from './lib/ng-rxform-generator.component';
 export * from './lib/ng-rxform-generator.module';
+export * from './lib/classes/input.field.class';
