@@ -21,11 +21,11 @@ import { Subscription } from 'rxjs';
 import { isEqual } from './utils/utils';
 
 @Component({
-  selector: 'rxf-ng-rxform-generator',
+  selector: 'rxf-generator',
   templateUrl: './ng-rxform-generator.component.html',
   styles: []
 })
-export class NgRxformGeneratorComponent implements OnInit, OnDestroy {
+export class NgRxFormGeneratorComponent implements OnInit, OnDestroy {
   @Input() fields: RxFormGeneratorField<any>[];
   @Output() formChanges = new EventEmitter<any>();
   @Output() saveForm = new EventEmitter<any>();

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgRxformGeneratorComponent } from './ng-rxform-generator.component';
+import { NgRxFormGeneratorComponent } from './ng-rxform-generator.component';
 
-describe('NgRxformGeneratorComponent', () => {
-  let component: NgRxformGeneratorComponent;
-  let fixture: ComponentFixture<NgRxformGeneratorComponent>;
+describe('NgRxFormGeneratorComponent', () => {
+  let component: NgRxFormGeneratorComponent;
+  let fixture: ComponentFixture<NgRxFormGeneratorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgRxformGeneratorComponent ]
+      declarations: [ NgRxFormGeneratorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgRxformGeneratorComponent);
+    fixture = TestBed.createComponent(NgRxFormGeneratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
