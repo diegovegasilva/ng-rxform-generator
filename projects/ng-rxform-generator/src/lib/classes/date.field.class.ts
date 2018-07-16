@@ -4,14 +4,14 @@ import { RxFormGeneratorField } from './form.field.class';
 
 export class RxFormGeneratorDate extends RxFormGeneratorField<string> {
   inputType: InputType = 'date';
-  type: FieldType;
+  fieldType: FieldType;
   min;
   max;
   step: number;
 
   constructor(options: RxFormGeneratorOptions<string> = {}) {
     super(options);
-    this.type = options['type'] || 'date';
+    this.fieldType = options['fieldType'] || 'date';
     this.min = options['min'] !== undefined ? options['min'] : '';
     this.max = options['max'] !== undefined ? options['max'] : '';
     this.step = options['step'] !== undefined ? options['max'] : 1;

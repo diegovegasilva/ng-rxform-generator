@@ -6,10 +6,10 @@ export class RxFormGeneratorInput extends RxFormGeneratorField<
   string | number
 > {
   inputType: InputType = 'text';
-  type: FieldType;
+  fieldType: FieldType;
 
   constructor(options: RxFormGeneratorOptions<string | number> = {}) {
     super(options);
-    this.type = options['type'] || 'text';
+    this.fieldType = options['fieldType'] || 'text';
   }
 }

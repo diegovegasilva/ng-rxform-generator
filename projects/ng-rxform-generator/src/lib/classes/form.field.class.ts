@@ -9,7 +9,7 @@ export class RxFormGeneratorField<T> {
   value: T;
   key: string;
   inputType: string;
-  type: FieldType;
+  fieldType: FieldType;
   useMaterial: boolean;
   placeholder: string;
   validators: any[];
@@ -24,7 +24,7 @@ export class RxFormGeneratorField<T> {
     this.value = options.value;
     this.key = options.key;
     this.inputType = options.inputType;
-    this.type = options.type;
+    this.fieldType = options.fieldType;
     this.useMaterial = options.useMaterial || false;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;

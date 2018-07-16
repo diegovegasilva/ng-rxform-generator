@@ -6,7 +6,7 @@
         <!-- Input text -->
         <!-- <mat-form-field *ngIf="field.inputType === 'text' && field.useMaterial">
             <input matInput
-                   [type]="field.type"
+                   [type]="field.fieldType"
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
@@ -19,7 +19,7 @@
 
         <div class="form-control"
              *ngIf="field.inputType === 'text' && !field.useMaterial">
-            <input [type]="field.type"
+            <input [type]="field.fieldType"
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
