@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as FormGenerator from 'ng-rxform-generator';
+import {RxFormInput, RxFormTextarea} from 'ng-rxform-generator';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +9,27 @@ import * as FormGenerator from 'ng-rxform-generator';
 export class AppComponent implements OnInit {
   title = 'app';
   formSettings;
+
   constructor() {}
 
   ngOnInit() {
     this.formSettings = [
-      new FormGenerator.RxFormInput({
-        key: 'name',
+      new RxFormInput({
+        key: 'ter',
         fieldType: 'text',
         placeholder: 'Nombre',
         value: 'errete',
         validators: [{ type: 'required' }]
       }),
-      new FormGenerator.RxFormInput({
+      new RxFormInput({
         key: 'email',
         fieldType: 'email',
         placeholder: 'Email',
         value: 'sdfs123@as.as',
         validators: [{ type: 'required' }, { type: 'email' }]
+      }),
+      new RxFormTextarea<string>({
+        key: 'comments',
       })
     ];
   }

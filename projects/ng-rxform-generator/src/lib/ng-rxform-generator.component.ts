@@ -35,7 +35,7 @@ export class NgRxFormGeneratorComponent implements OnInit, OnDestroy {
   originalValues = {};
   errorMsg;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.errorMsg = errorMsg;
@@ -76,9 +76,11 @@ export class NgRxFormGeneratorComponent implements OnInit, OnDestroy {
 
   addValidators(validationData: any[]): any[] {
     const validatiors = [];
-    validationData.forEach(val => {
-      validatiors.push(Validators[val.type]);
-    });
+    if (validationData && validationData.length > 0) {
+      validationData.forEach(val => {
+        validatiors.push(Validators[val.type]);
+      });
+    }
     return validatiors;
   }
 

@@ -31,6 +31,26 @@
         </div>
 
 
+        <!-- Textarea -->
+
+        <!-- <mat-form-field *ngIf="field.inputType === 'textarea'">
+            <textarea matInput
+                      formControlName="{{field.key}}"
+                      [readonly]="field.readonly"
+                      [disabled]="field.disabled"
+                      [placeholder]="field.placeholder"></textarea>
+            <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
+          </mat-form-field> -->
+
+        <div class="form-control"
+             *ngIf="field.inputType === 'textarea' && !field.useMaterial">
+            <textarea formControlName="{{field.key}}"
+                      [readonly]="field.readonly"
+                      [placeholder]="field.placeholder">
+            </textarea>
+            <p *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
     </div>
 
 
