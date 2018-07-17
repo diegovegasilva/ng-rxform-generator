@@ -51,6 +51,31 @@
             <p *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
         </div>
 
+        <!-- Select -->
+
+        <div class="form-control"
+             *ngIf="field.inputType === 'select' && !field.useMaterial">
+            <select formControlName="{{field.key}}">
+            <option *ngFor="let value of field.options | async"
+                        [value]="value[field.optionKeys.key]">
+              {{value[field.optionKeys.value]}}
+            </option>
+          </select>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
+        <!-- <mat-form-field *ngIf="field.inputType === 'select'">
+          <mat-select [placeholder]="field.placeholder"
+                      formControlName="{{field.key}}">
+            <mat-option *ngFor="let value of field.options | async"
+                        [value]="value[field.optionKeys.key]">
+              {{value[field.optionKeys.value]}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
+        </mat-form-field> -->
+
     </div>
 
 

@@ -47,8 +47,8 @@ export interface RxFormGeneratorTextareaConfig<T> {
   readonly?: boolean;
 }
 
-export interface RxFormGeneratorSelectConfig<T> {
-  value?: T;
+export interface RxFormGeneratorSelectConfig {
+  value?: object;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
@@ -57,8 +57,11 @@ export interface RxFormGeneratorSelectConfig<T> {
   disabled?: boolean;
   readonly?: boolean;
   multiple?: boolean;
-  options: Observable<any>;
-  optionKeys: RxFormGeneratorSelectOptions;
+  options: Observable<object>;
+  optionKeys: {
+    key: any;
+    value: any;
+  };
 }
 
 export interface RxFormGeneratorCheckboxConfig<T> {

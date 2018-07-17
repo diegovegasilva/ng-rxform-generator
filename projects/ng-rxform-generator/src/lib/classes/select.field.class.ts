@@ -1,12 +1,12 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { InputType } from '../models/types';
 import { RxFormGeneratorSelectOptions } from '../models/form.selectOptions.model';
 import { RxFormGeneratorSelectConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
-export class RxFormGeneratorSelect<T> {
-  value?: T;
+export class RxFormGeneratorSelect {
+  value?: object;
   key: string;
   inputType: InputType = 'select';
   useMaterial?: boolean;
@@ -15,10 +15,13 @@ export class RxFormGeneratorSelect<T> {
   disabled?: boolean;
   readonly?: boolean;
   multiple?: boolean;
-  options?: Observable<any>;
-  optionKeys?: RxFormGeneratorSelectOptions;
+  options: Observable<object> | object[];
+  optionKeys: {
+    key: any;
+    value: any;
+  };
 
-  constructor(options: RxFormGeneratorSelectConfig<T>) {
+  constructor(options: RxFormGeneratorSelectConfig) {
     this.value = options.value;
     this.key = options.key;
     this.useMaterial = options.useMaterial || false;
@@ -28,6 +31,12 @@ export class RxFormGeneratorSelect<T> {
     this.readonly = !!options.readonly;
     this.multiple = !!options.multiple;
     this.options = options.options;
+    if (!(this.options instanceof Observable)) {
+      this.options = of(this.options);
+    }
     this.optionKeys = options.optionKeys;
+    if (!this.value && this.placeholder) {
+      this.value = { key: this.optionKeys.key, value: this.placeholder };
+    }
   }
 }

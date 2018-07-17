@@ -48,6 +48,7 @@ export class NgRxFormGeneratorComponent implements OnInit, OnDestroy {
       )
       .subscribe(value => {
         this.formChanges.emit(value);
+        console.log(this.form);
         this.formModified = !isEqual(value, this.originalValues);
       });
   }

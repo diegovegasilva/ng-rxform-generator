@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RxFormInput, RxFormTextarea} from 'ng-rxform-generator';
+import { Observable, from, of } from 'rxjs';
+import { RxFormInput, RxFormTextarea, RxFormSelect } from 'ng-rxform-generator';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,15 @@ import {RxFormInput, RxFormTextarea} from 'ng-rxform-generator';
 export class AppComponent implements OnInit {
   title = 'app';
   formSettings;
+  selectOptions: Observable<object>;
 
   constructor() {}
 
   ngOnInit() {
+    this.selectOptions = of([
+      { id: 1, name: 'option1' },
+      { id: 2, name: 'option2' }
+    ]);
     this.formSettings = [
       new RxFormInput({
         key: 'ter',
@@ -28,8 +34,13 @@ export class AppComponent implements OnInit {
         value: 'sdfs123@as.as',
         validators: [{ type: 'required' }, { type: 'email' }]
       }),
-      new RxFormTextarea<string>({
-        key: 'comments',
+      new RxFormTextarea({
+        key: 'comments'
+      }),
+      new RxFormSelect({
+        key: 'dropdown',
+        optionKeys: {key: 'id', value : 'name'},
+        options: this.selectOptions
       })
     ];
   }
