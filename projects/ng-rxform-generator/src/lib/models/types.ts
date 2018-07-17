@@ -16,7 +16,9 @@ export type FieldType =
   | 'hidden'
   | 'range'
   | 'file'
-  | 'color'
+  | 'color';
+
+  export type DateFieldType =
   | 'date'
   | 'datetime'
   | 'datetime-local'

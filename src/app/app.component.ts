@@ -13,14 +13,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.formSettings = [
-      new FormGenerator.RxFormGeneratorInput({
+      new FormGenerator.RxFormInput({
         key: 'name',
         fieldType: 'text',
         placeholder: 'Nombre',
         value: 'errete',
         validators: [{ type: 'required' }]
       }),
-      new FormGenerator.RxFormGeneratorInput({
+      new FormGenerator.RxFormInput({
         key: 'email',
         fieldType: 'email',
         placeholder: 'Email',

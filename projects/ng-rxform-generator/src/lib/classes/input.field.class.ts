@@ -1,15 +1,26 @@
 import { FieldType, InputType } from '../models/types';
-import { RxFormGeneratorOptions } from '../models/form.options.model';
-import { RxFormGeneratorField } from './form.field.class';
+import { RxFormGeneratorInputConfig } from '../models/form.options.model';
+import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
-export class RxFormGeneratorInput extends RxFormGeneratorField<
-  string | number
-> {
+export class RxFormGeneratorInput<T> {
   inputType: InputType = 'text';
-  fieldType: FieldType;
+  value?: T;
+  key: string;
+  useMaterial?: boolean;
+  fieldType?: FieldType;
+  placeholder?: string;
+  validators?: RxFormGeneratorValidation[];
+  disabled?: boolean;
+  readonly?: boolean;
 
-  constructor(options: RxFormGeneratorOptions<string | number>) {
-    super(options);
+  constructor(options: RxFormGeneratorInputConfig<T>) {
     this.fieldType = options['fieldType'] || 'text';
+    this.value = options.value;
+    this.key = options.key;
+    this.useMaterial = options.useMaterial || false;
+    this.placeholder = options.placeholder || '';
+    this.validators = options.validators || undefined;
+    this.disabled = !!options.disabled;
+    this.readonly = !!options.readonly;
   }
 }
