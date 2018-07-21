@@ -6,7 +6,7 @@ import { RxFormGeneratorSelectConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
 export class RxFormGeneratorSelect {
-  value?: object;
+  value?: any;
   key: string;
   inputType: InputType = 'select';
   useMaterial?: boolean;
@@ -36,7 +36,7 @@ export class RxFormGeneratorSelect {
     }
     this.optionKeys = options.optionKeys;
     if (!this.value && this.placeholder) {
-      this.value = { key: this.optionKeys.key, value: this.placeholder };
+      this.value = this.placeholder;
     }
   }
 }

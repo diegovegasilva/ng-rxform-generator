@@ -48,7 +48,7 @@ export interface RxFormGeneratorTextareaConfig<T> {
 }
 
 export interface RxFormGeneratorSelectConfig {
-  value?: object;
+  value?: any;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;

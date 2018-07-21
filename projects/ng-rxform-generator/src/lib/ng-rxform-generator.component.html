@@ -56,6 +56,9 @@
         <div class="form-control"
              *ngIf="field.inputType === 'select' && !field.useMaterial">
             <select formControlName="{{field.key}}">
+              <option *ngIf="field.placeholder" disabled>
+                {{field.placeholder}}
+              </option>
             <option *ngFor="let value of field.options | async"
                         [value]="value[field.optionKeys.key]">
               {{value[field.optionKeys.value]}}

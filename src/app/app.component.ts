@@ -40,7 +40,9 @@ export class AppComponent implements OnInit {
       new RxFormSelect({
         key: 'dropdown',
         optionKeys: {key: 'id', value : 'name'},
-        options: this.selectOptions
+        options: this.selectOptions,
+        placeholder: 'select one option',
+        validators: [{ type: 'required' }],
       })
     ];
   }
