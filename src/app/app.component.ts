@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, from, of } from 'rxjs';
-import { RxFormInput, RxFormTextarea, RxFormSelect } from 'ng-rxform-generator';
+import { RxFormInput, RxFormTextarea, RxFormSelect, RxFormCheckbox } from 'ng-rxform-generator';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +43,13 @@ export class AppComponent implements OnInit {
         options: this.selectOptions,
         placeholder: 'select one option',
         validators: [{ type: 'required' }],
+      }),
+      new RxFormCheckbox({
+        key: 'legal',
+        label: 'legal',
+        value : true,
+        disabled : true
+
       })
     ];
   }

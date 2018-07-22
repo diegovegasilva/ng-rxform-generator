@@ -12,6 +12,7 @@ export class RxFormGeneratorField<T> {
   fieldType: FieldType;
   useMaterial: boolean;
   placeholder: string;
+  label: string;
   validators: any[];
   attributes: RxFormGeneratorAttributes[];
   disabled: boolean;
@@ -26,7 +27,8 @@ export class RxFormGeneratorField<T> {
     this.inputType = options.inputType;
     this.fieldType = options.fieldType;
     this.useMaterial = options.useMaterial || false;
-    this.placeholder = options.placeholder || '';
+    this.placeholder = options.placeholder;
+    this.label = options.label;
     this.validators = options.validators || undefined;
     this.attributes = options.attributes || undefined;
     this.disabled = !!options.disabled;

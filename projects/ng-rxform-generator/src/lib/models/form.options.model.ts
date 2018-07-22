@@ -12,6 +12,7 @@ export interface RxFormGeneratorOptions<T> {
   useMaterial?: boolean;
   fieldType?: FieldType;
   placeholder?: string;
+  label?: string;
   validators?: RxFormGeneratorValidation[];
   attributes?: RxFormGeneratorAttributes[];
   disabled?: boolean;
@@ -64,15 +65,14 @@ export interface RxFormGeneratorSelectConfig {
   };
 }
 
-export interface RxFormGeneratorCheckboxConfig<T> {
-  value?: T;
+export interface RxFormGeneratorCheckboxConfig {
+  value?: boolean;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
   label?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
-  readonly?: boolean;
 }
 
 export interface RxFormGeneratorDateConfig<T> {

@@ -23,11 +23,16 @@
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
-            <p *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-            <p *ngIf="form.controls[field.key].hasError('email') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_EMAIL}}</p>
-            <p *ngIf="form.controls[field.key].hasError('minLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MINLENGTH}}</p>
-            <p *ngIf="form.controls[field.key].hasError('maxLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MAXLENGTH}}</p>
-            <p *ngIf="form.controls[field.key].hasError('pattern') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_PATTERN}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('email') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_EMAIL}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('minLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MINLENGTH}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('maxLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MAXLENGTH}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('pattern') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_PATTERN}}</p>
         </div>
 
 
@@ -48,7 +53,8 @@
                       [readonly]="field.readonly"
                       [placeholder]="field.placeholder">
             </textarea>
-            <p *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
         </div>
 
         <!-- Select -->
@@ -78,6 +84,24 @@
           </mat-select>
           <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
         </mat-form-field> -->
+
+
+        <!-- Checkbox -->
+
+        <div class="form-control"
+             *ngIf="field.inputType === 'checkbox' && !field.useMaterial">
+            <label *ngIf="field.label"
+                   [for]="field.key">{{field.label}}</label>
+            <input type="checkbox"
+                   formControlName="{{field.key}}" />
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('requiredTrue')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
+        <!-- <ng-container *ngIf="field.inputType === 'checkbox'">
+            <mat-checkbox formControlName="{{field.key}}">{{field.placeholder}}</mat-checkbox>
+            <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
+        </ng-container> -->
 
     </div>
 
