@@ -47,8 +47,7 @@ export class AppComponent implements OnInit {
       new RxFormCheckbox({
         key: 'legal',
         label: 'legal',
-        value : true,
-        disabled : true
+        value : false
 
       })
     ];
