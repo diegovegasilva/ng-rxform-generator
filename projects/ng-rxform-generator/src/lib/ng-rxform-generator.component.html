@@ -103,6 +103,20 @@
             <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
         </ng-container> -->
 
+
+        <!-- Date -->
+        <div class="form-control"
+             *ngIf="field.inputType === 'date' && !field.useMaterial">
+            <input [type]="field.fieldType"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
     </div>
 
 

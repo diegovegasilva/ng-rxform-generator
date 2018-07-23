@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, from, of } from 'rxjs';
 import { RxFormInput, RxFormTextarea, RxFormSelect, RxFormCheckbox } from 'ng-rxform-generator';
+import { RxFormDate } from 'projects/ng-rxform-generator/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +49,10 @@ export class AppComponent implements OnInit {
         key: 'legal',
         label: 'legal',
         value : false
-
+      }),
+      new RxFormDate({
+        key: 'date',
+        max: '2018-08-20'
       })
     ];
   }

@@ -18,6 +18,9 @@ export class RxFormGeneratorField<T> {
   disabled: boolean;
   readonly: boolean;
   multiple: boolean;
+  max: any;
+  min: any;
+  step: number;
   options: Observable<any>;
   optionKeys: RxFormGeneratorSelectOptions;
 
@@ -34,6 +37,9 @@ export class RxFormGeneratorField<T> {
     this.disabled = !!options.disabled;
     this.readonly = !!options.readonly;
     this.multiple = !!options.multiple;
+    this.max = options.max;
+    this.min = options.min;
+    this.step = options.step;
     this.options = options.options;
     this.optionKeys = options.optionKeys;
   }

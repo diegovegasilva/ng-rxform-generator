@@ -75,19 +75,17 @@ export interface RxFormGeneratorCheckboxConfig {
   disabled?: boolean;
 }
 
-export interface RxFormGeneratorDateConfig<T> {
-  value?: T;
+export interface RxFormGeneratorDateConfig {
+  value?: any;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
   fieldType?: DateFieldType;
-  placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
   readonly?: boolean;
   min?: any;
   max?: any;
-  step?: number;
 }
 
 export interface RxFormGeneratorNumberConfig<T> {
