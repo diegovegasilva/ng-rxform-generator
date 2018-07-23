@@ -88,8 +88,8 @@ export interface RxFormGeneratorDateConfig {
   max?: any;
 }
 
-export interface RxFormGeneratorNumberConfig<T> {
-  value?: T;
+export interface RxFormGeneratorNumberConfig {
+  value?: number;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
@@ -97,8 +97,8 @@ export interface RxFormGeneratorNumberConfig<T> {
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
   readonly?: boolean;
-  min?: any;
-  max?: any;
+  min?: number;
+  max?: number;
   step?: number;
 }
 

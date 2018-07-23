@@ -23,6 +23,10 @@
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
+                   <!-- TO DO -->
+                   <!--
+                    loop through custom validation fields
+                   -->
             <p class="error"
                *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
             <p class="error"
@@ -108,6 +112,20 @@
         <div class="form-control"
              *ngIf="field.inputType === 'date' && !field.useMaterial">
             <input [type]="field.fieldType"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
+        <!-- Number -->
+        <div class="form-control"
+             *ngIf="field.inputType === 'number' && !field.useMaterial">
+            <input [type]="'number'"
+                   [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    [max]="field.max"
                    [min]="field.min"
