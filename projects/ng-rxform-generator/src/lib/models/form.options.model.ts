@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { InputType, FieldType, DateFieldType } from './types';
+import { InputType, TextFieldType, DateFieldType } from './types';
 import { RxFormGeneratorValidation } from './form.validation.model';
 import { RxFormGeneratorAttributes } from './form.attributes.model';
 import { RxFormGeneratorSelectOptions } from './form.selectOptions.model';
@@ -11,7 +11,7 @@ export interface RxFormGeneratorOptions<T> {
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
-  fieldType?: FieldType;
+  fieldType?: TextFieldType;
   placeholder?: string;
   label?: string;
   legend?: string;
@@ -32,7 +32,7 @@ export interface RxFormGeneratorInputConfig<T> {
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
-  fieldType?: FieldType;
+  fieldType?: TextFieldType;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { FieldType } from '../models/types';
+import { TextFieldType } from '../models/types';
 import { RxFormGeneratorAttributes } from '../models/form.attributes.model';
 import { RxFormGeneratorSelectOptions } from '../models/form.selectOptions.model';
 import { RxFormGeneratorRadioOptions } from '../models/form.radioOptions.model';
@@ -10,7 +10,7 @@ export class RxFormGeneratorField<T> {
   value: T;
   key: string;
   inputType: string;
-  fieldType: FieldType;
+  fieldType: TextFieldType;
   useMaterial: boolean;
   placeholder: string;
   label: string;

@@ -1,4 +1,4 @@
-import { FieldType, InputType } from '../models/types';
+import { TextFieldType, InputType } from '../models/types';
 import { RxFormGeneratorInputConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
@@ -7,7 +7,7 @@ export class RxFormGeneratorInput<T> {
   value?: T;
   key: string;
   useMaterial?: boolean;
-  fieldType?: FieldType;
+  fieldType?: TextFieldType;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;

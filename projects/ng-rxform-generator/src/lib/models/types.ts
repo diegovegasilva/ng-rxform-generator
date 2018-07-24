@@ -8,7 +8,7 @@ export type InputType =
   | 'number'
   | 'slideToggle';
 
-export type FieldType =
+export type TextFieldType =
   | 'text'
   | 'password'
   | 'tel'
