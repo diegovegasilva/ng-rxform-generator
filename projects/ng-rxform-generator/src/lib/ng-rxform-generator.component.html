@@ -23,8 +23,8 @@
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
-                   <!-- TO DO -->
-                   <!--
+            <!-- TO DO -->
+            <!--
                     loop through custom validation fields
                    -->
             <p class="error"
@@ -134,6 +134,19 @@
             <p class="error"
                *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
         </div>
+
+        <div class="form-control"
+             *ngIf="field.inputType === 'radio' && !field.useMaterial">
+            <legend *ngIf="field.legend">{{field.legend}}</legend>
+            <div class="form-radio-group" *ngFor="let option of field.options">
+                <label>{{option.label || option.value}}</label>
+                <input type="radio" [value]="option.value"
+                       formControlName="{{field.key}}" />
+            </div>
+            <p class="error"
+               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
+        </div>
+
 
     </div>
 

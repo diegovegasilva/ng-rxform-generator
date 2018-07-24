@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, from, of } from 'rxjs';
 import { RxFormInput, RxFormTextarea, RxFormSelect, RxFormCheckbox, RxFormDate, RxFormNumber } from 'ng-rxform-generator';
+import { RxFormRadio } from 'projects/ng-rxform-generator/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +60,16 @@ export class AppComponent implements OnInit {
         min: 2,
         step: 0.5,
         placeholder: 'qty',
+      }),
+      new RxFormRadio({
+        key: 'types',
+        legend: 'types',
+        options : [
+          {value: 'sms2', label: 'sms'},
+          {value: 'mail', label: 'email'},
+          {value: 'call'},
+        ],
+        value : 'call'
       }),
     ];
   }

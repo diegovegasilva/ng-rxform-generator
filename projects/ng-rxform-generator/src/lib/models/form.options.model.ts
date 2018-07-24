@@ -4,6 +4,7 @@ import { InputType, FieldType, DateFieldType } from './types';
 import { RxFormGeneratorValidation } from './form.validation.model';
 import { RxFormGeneratorAttributes } from './form.attributes.model';
 import { RxFormGeneratorSelectOptions } from './form.selectOptions.model';
+import { RxFormGeneratorRadioOptions } from './form.radioOptions.model';
 
 export interface RxFormGeneratorOptions<T> {
   value?: T;
@@ -13,6 +14,7 @@ export interface RxFormGeneratorOptions<T> {
   fieldType?: FieldType;
   placeholder?: string;
   label?: string;
+  legend?: string;
   validators?: RxFormGeneratorValidation[];
   attributes?: RxFormGeneratorAttributes[];
   disabled?: boolean;
@@ -21,7 +23,7 @@ export interface RxFormGeneratorOptions<T> {
   min?: any;
   max?: any;
   step?: number;
-  options?: Observable<any>;
+  options?: Observable<any> | RxFormGeneratorRadioOptions[];
   optionKeys?: RxFormGeneratorSelectOptions;
 }
 
@@ -100,6 +102,17 @@ export interface RxFormGeneratorNumberConfig {
   min?: number;
   max?: number;
   step?: number;
+}
+
+export interface RxFormGeneratorRadioConfig {
+  options: RxFormGeneratorRadioOptions[];
+  value?: any;
+  key: string;
+  inputType?: InputType;
+  useMaterial?: boolean;
+  legend?: string;
+  validators?: RxFormGeneratorValidation[];
+  disabled?: boolean;
 }
 
 export interface RxFormGeneratorSlideToggleConfig<T> {
