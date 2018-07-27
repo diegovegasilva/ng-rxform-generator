@@ -15,10 +15,10 @@ import {
 
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
 
-import { RxFormGeneratorField } from './classes/form.field.class';
-import { errorMsg } from './errors/error.enum';
+import { RxFormGeneratorField } from '../classes/form.field.class';
+import { errorMsg } from '../errors/error.enum';
 import { Subscription } from 'rxjs';
-import { isEqual } from './utils/utils';
+import { isEqual } from '../utils/utils';
 
 @Component({
   selector: 'rxf-generator',

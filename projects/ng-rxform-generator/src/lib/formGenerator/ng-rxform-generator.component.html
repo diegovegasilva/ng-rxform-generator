@@ -4,7 +4,7 @@
          *ngFor="let field of fields">
 
         <!-- Input text -->
-        <!-- <mat-form-field *ngIf="field.inputType === 'text' && field.useMaterial">
+        <mat-form-field *ngIf="field.inputType === 'text' && field.useMaterial">
             <input matInput
                    [type]="field.fieldType"
                    [placeholder]="field.placeholder"
@@ -15,7 +15,7 @@
             <mat-error *ngIf="form.controls[field.key].hasError('minLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MINLENGTH}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('maxLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MAXLENGTH}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('pattern') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_PATTERN}}</mat-error>
-        </mat-form-field> -->
+        </mat-form-field>
 
         <div class="form-control"
              *ngIf="field.inputType === 'text' && !field.useMaterial">
