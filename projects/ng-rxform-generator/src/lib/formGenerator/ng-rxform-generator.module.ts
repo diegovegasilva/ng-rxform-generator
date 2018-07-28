@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { NgRxFormGeneratorComponent } from './ng-rxform-generator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, BrowserAnimationsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   declarations: [NgRxFormGeneratorComponent],
   exports: [NgRxFormGeneratorComponent]
 })

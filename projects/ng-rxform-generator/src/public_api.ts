@@ -4,4 +4,6 @@
 
 export * from './lib/formGenerator/ng-rxform-generator.component';
 export * from './lib/formGenerator/ng-rxform-generator.module';
+export * from './lib/formMaterialGenerator/ng-rxform-material-generator.component';
+export * from './lib/formMaterialGenerator/ng-rxform-material-generator.module';
 export * from './lib/classes';
