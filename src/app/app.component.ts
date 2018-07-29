@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { RxFormInput, RxFormTextarea, RxFormSelect, RxFormCheckbox, RxFormDate, RxFormNumber } from 'ng-rxform-generator';
+import {
+  RxFormInput,
+  RxFormTextarea,
+  RxFormSelect,
+  RxFormCheckbox,
+  RxFormDate,
+  RxFormNumber,
+  RxFormField
+} from 'ng-rxform-generator';
 import { RxFormRadio } from 'projects/ng-rxform-generator/src/public_api';
 
 @Component({
@@ -10,7 +18,7 @@ import { RxFormRadio } from 'projects/ng-rxform-generator/src/public_api';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  formSettings;
+  formSettings: RxFormField[];
   selectOptions: Observable<object>;
 
   constructor() {}
@@ -40,15 +48,15 @@ export class AppComponent implements OnInit {
       }),
       new RxFormSelect({
         key: 'dropdown',
-        optionKeys: {key: 'id', value : 'name'},
+        optionKeys: { key: 'id', value: 'name' },
         options: this.selectOptions,
         placeholder: 'select one option',
-        validators: [{ type: 'required' }],
+        validators: [{ type: 'required' }]
       }),
       new RxFormCheckbox({
         key: 'legal',
         label: 'legal',
-        value : false
+        value: false
       }),
       new RxFormDate({
         key: 'date',
@@ -59,18 +67,18 @@ export class AppComponent implements OnInit {
         max: 10,
         min: 2,
         step: 0.5,
-        placeholder: 'qty',
+        placeholder: 'qty'
       }),
       new RxFormRadio({
         key: 'types',
         legend: 'types',
-        options : [
-          {value: 'sms2', label: 'sms'},
-          {value: 'mail', label: 'email'},
-          {value: 'call'},
+        options: [
+          { value: 'sms2', label: 'sms' },
+          { value: 'mail', label: 'email' },
+          { value: 'call' }
         ],
-        value : 'call'
-      }),
+        value: 'call'
+      })
     ];
   }
 }

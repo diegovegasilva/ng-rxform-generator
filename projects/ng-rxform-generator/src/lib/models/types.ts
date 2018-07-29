@@ -1,3 +1,12 @@
+import { RxFormGeneratorCheckbox } from '../classes/checkbox.field.class';
+import { RxFormGeneratorDate } from '../classes/date.field.class';
+import { RxFormGeneratorInput } from '../classes/input.field.class';
+import { RxFormGeneratorInputNumber } from '../classes/number.field.class';
+import { RxFormGeneratorSelect } from '../classes/select.field.class';
+import { RxFormGeneratorSlideToggle } from '../classes/slideToggle.field.class';
+import { RxFormGeneratorTextarea } from '../classes/textarea.field.class';
+import { RxFormGeneratorRadio } from '../classes/radio.field.class';
+
 export type InputType =
   | 'text'
   | 'select'
@@ -35,3 +44,15 @@ export type FieldValidation =
   | 'max'
   | 'minLength'
   | 'maxLength';
+
+
+  export type RxFormField =
+  | RxFormGeneratorCheckbox
+  | RxFormGeneratorDate
+  | RxFormGeneratorInput
+  | RxFormGeneratorInputNumber
+  | RxFormGeneratorSelect
+  | RxFormGeneratorSelect
+  | RxFormGeneratorSlideToggle
+  | RxFormGeneratorTextarea
+  | RxFormGeneratorRadio;

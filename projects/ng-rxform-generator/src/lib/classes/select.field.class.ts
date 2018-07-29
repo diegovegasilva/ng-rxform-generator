@@ -1,7 +1,6 @@
 import { Observable, of } from 'rxjs';
 
 import { InputType } from '../models/types';
-import { RxFormGeneratorSelectOptions } from '../models/form.selectOptions.model';
 import { RxFormGeneratorSelectConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 

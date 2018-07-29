@@ -3,9 +3,9 @@ import { RxFormGeneratorTextareaConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
 
-export class RxFormGeneratorTextarea<T> {
+export class RxFormGeneratorTextarea {
   inputType: InputType = 'textarea';
-  value?: T;
+  value?: any;
   key: string;
   useMaterial?: boolean;
   placeholder?: string;
@@ -13,7 +13,7 @@ export class RxFormGeneratorTextarea<T> {
   disabled?: boolean;
   readonly?: boolean;
 
-  constructor(options: RxFormGeneratorTextareaConfig<T>) {
+  constructor(options: RxFormGeneratorTextareaConfig) {
     this.value = options.value;
     this.key = options.key;
     this.useMaterial = options.useMaterial || false;

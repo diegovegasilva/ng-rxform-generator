@@ -15,7 +15,7 @@ import {
 
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
 
-import { RxFormGeneratorField } from '../classes/form.field.class';
+import { RxFormField } from '../models/types';
 import { errorMsg } from '../errors/error.enum';
 import { Subscription } from 'rxjs';
 import { isEqual } from '../utils/utils';
@@ -26,7 +26,7 @@ import { isEqual } from '../utils/utils';
   styles: []
 })
 export class NgRxFormMaterialGeneratorComponent implements OnInit, OnDestroy {
-  @Input() fields: RxFormGeneratorField<any>[];
+  @Input() fields: RxFormField[];
   @Output() formChanges = new EventEmitter<any>();
   @Output() saveForm = new EventEmitter<any>();
   form: FormGroup;

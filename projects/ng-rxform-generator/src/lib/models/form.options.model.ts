@@ -2,33 +2,10 @@ import { Observable } from 'rxjs';
 
 import { InputType, TextFieldType, DateFieldType } from './types';
 import { RxFormGeneratorValidation } from './form.validation.model';
-import { RxFormGeneratorAttributes } from './form.attributes.model';
-import { RxFormGeneratorSelectOptions } from './form.selectOptions.model';
 import { RxFormGeneratorRadioOptions } from './form.radioOptions.model';
 
-export interface RxFormGeneratorOptions<T> {
-  value?: T;
-  key: string;
-  inputType?: InputType;
-  useMaterial?: boolean;
-  fieldType?: TextFieldType;
-  placeholder?: string;
-  label?: string;
-  legend?: string;
-  validators?: RxFormGeneratorValidation[];
-  attributes?: RxFormGeneratorAttributes[];
-  disabled?: boolean;
-  readonly?: boolean;
-  multiple?: boolean;
-  min?: any;
-  max?: any;
-  step?: number;
-  options?: Observable<any> | RxFormGeneratorRadioOptions[];
-  optionKeys?: RxFormGeneratorSelectOptions;
-}
-
-export interface RxFormGeneratorInputConfig<T> {
-  value?: T;
+export interface RxFormGeneratorInputConfig {
+  value?: any;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
@@ -39,8 +16,8 @@ export interface RxFormGeneratorInputConfig<T> {
   readonly?: boolean;
 }
 
-export interface RxFormGeneratorTextareaConfig<T> {
-  value?: T;
+export interface RxFormGeneratorTextareaConfig {
+  value?: any;
   key: string;
   inputType?: InputType;
   useMaterial?: boolean;
@@ -115,8 +92,8 @@ export interface RxFormGeneratorRadioConfig {
   disabled?: boolean;
 }
 
-export interface RxFormGeneratorSlideToggleConfig<T> {
-  value?: T;
+export interface RxFormGeneratorSlideToggleConfig {
+  value?: any;
   key: string;
   inputType?: InputType;
   label?: string;

@@ -2,9 +2,9 @@ import { TextFieldType, InputType } from '../models/types';
 import { RxFormGeneratorInputConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
-export class RxFormGeneratorInput<T> {
+export class RxFormGeneratorInput {
   inputType: InputType = 'text';
-  value?: T;
+  value?: any;
   key: string;
   useMaterial?: boolean;
   fieldType?: TextFieldType;
@@ -13,7 +13,7 @@ export class RxFormGeneratorInput<T> {
   disabled?: boolean;
   readonly?: boolean;
 
-  constructor(options: RxFormGeneratorInputConfig<T>) {
+  constructor(options: RxFormGeneratorInputConfig) {
     this.fieldType = options['fieldType'] || 'text';
     this.value = options.value;
     this.key = options.key;
