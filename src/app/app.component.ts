@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
         optionKeys: { key: 'id', value: 'name' },
         options: this.selectOptions,
         placeholder: 'select one option',
-        validators: [{ type: 'required' }]
+        validators: [{ type: 'required' }],
       }),
       new RxFormCheckbox({
         key: 'legal',

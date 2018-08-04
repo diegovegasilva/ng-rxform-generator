@@ -1,16 +1,80 @@
 <form [formGroup]="form"
       class="form">
-    <div class="form-group"
+    <div class="form-control"
          *ngFor="let field of fields">
 
         <!-- Input text -->
-
-        <div class="form-control"
-             *ngIf="field.inputType === 'text' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'text' && !field.useMaterial">
             <input [type]="field.fieldType"
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
+        </ng-container>
+
+        <!-- Textarea -->
+        <ng-container *ngIf="field.inputType === 'textarea' && !field.useMaterial">
+            <textarea formControlName="{{field.key}}"
+                      [readonly]="field.readonly"
+                      [placeholder]="field.placeholder">
+            </textarea>
+        </ng-container>
+
+        <!-- Select -->
+        <ng-container *ngIf="field.inputType === 'select' && !field.useMaterial">
+            <select formControlName="{{field.key}}">
+              <option *ngIf="field.placeholder" disabled>
+                {{field.placeholder}}
+              </option>
+            <option *ngFor="let value of field.options | async"
+                        [value]="value[field.optionKeys.key]">
+              {{value[field.optionKeys.value]}}
+            </option>
+          </select>
+        </ng-container>
+
+        <!-- Checkbox -->
+        <ng-container *ngIf="field.inputType === 'checkbox' && !field.useMaterial">
+            <label *ngIf="field.label"
+                   [for]="field.key">{{field.label}}</label>
+            <input type="checkbox"
+                   formControlName="{{field.key}}" />
+        </ng-container>
+
+        <!-- Date -->
+        <ng-container *ngIf="field.inputType === 'date' && !field.useMaterial">
+            <input [type]="field.fieldType"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+        </ng-container>
+
+        <!-- Number -->
+        <ng-container *ngIf="field.inputType === 'number' && !field.useMaterial">
+            <input [type]="'number'"
+                   [placeholder]="field.placeholder"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+        </ng-container>
+
+        <!-- Radio-->
+        <ng-container *ngIf="field.inputType === 'radio' && !field.useMaterial">
+            <legend *ngIf="field.legend">{{field.legend}}</legend>
+            <div class="form-radio-group"
+                 *ngFor="let option of field.options">
+                <label>{{option.label || option.value}}</label>
+                <input type="radio"
+                       [value]="option.value"
+                       formControlName="{{field.key}}" />
+            </div>
+        </ng-container>
+
+        <!-- Errors -->
+        <div class="error-message">
             <!-- TO DO -->
             <!--
                     loop through custom validation fields
@@ -26,92 +90,6 @@
             <p class="error"
                *ngIf="form.controls[field.key].hasError('pattern') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_PATTERN}}</p>
         </div>
-
-
-        <!-- Textarea -->
-
-        <div class="form-control"
-             *ngIf="field.inputType === 'textarea' && !field.useMaterial">
-            <textarea formControlName="{{field.key}}"
-                      [readonly]="field.readonly"
-                      [placeholder]="field.placeholder">
-            </textarea>
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-        <!-- Select -->
-
-        <div class="form-control"
-             *ngIf="field.inputType === 'select' && !field.useMaterial">
-            <select formControlName="{{field.key}}">
-              <option *ngIf="field.placeholder" disabled>
-                {{field.placeholder}}
-              </option>
-            <option *ngFor="let value of field.options | async"
-                        [value]="value[field.optionKeys.key]">
-              {{value[field.optionKeys.value]}}
-            </option>
-          </select>
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-
-        <!-- Checkbox -->
-
-        <div class="form-control"
-             *ngIf="field.inputType === 'checkbox' && !field.useMaterial">
-            <label *ngIf="field.label"
-                   [for]="field.key">{{field.label}}</label>
-            <input type="checkbox"
-                   formControlName="{{field.key}}" />
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('requiredTrue')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-
-
-        <!-- Date -->
-        <div class="form-control"
-             *ngIf="field.inputType === 'date' && !field.useMaterial">
-            <input [type]="field.fieldType"
-                   [readonly]="field.readonly"
-                   [max]="field.max"
-                   [min]="field.min"
-                   [step]="field.step"
-                   formControlName="{{field.key}}">
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-        <!-- Number -->
-        <div class="form-control"
-             *ngIf="field.inputType === 'number' && !field.useMaterial">
-            <input [type]="'number'"
-                   [placeholder]="field.placeholder"
-                   [readonly]="field.readonly"
-                   [max]="field.max"
-                   [min]="field.min"
-                   [step]="field.step"
-                   formControlName="{{field.key}}">
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-        <div class="form-control"
-             *ngIf="field.inputType === 'radio' && !field.useMaterial">
-            <legend *ngIf="field.legend">{{field.legend}}</legend>
-            <div class="form-radio-group" *ngFor="let option of field.options">
-                <label>{{option.label || option.value}}</label>
-                <input type="radio" [value]="option.value"
-                       formControlName="{{field.key}}" />
-            </div>
-            <p class="error"
-               *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</p>
-        </div>
-
-
     </div>
 
 

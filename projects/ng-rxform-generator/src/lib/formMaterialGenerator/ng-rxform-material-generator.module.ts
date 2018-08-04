@@ -3,7 +3,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { NgRxFormMaterialGeneratorComponent } from './ng-rxform-material-generator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material';
+import {
+  MatInputModule,
+  MatSelectModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatRadioModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -11,7 +18,12 @@ import { MatInputModule } from '@angular/material';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule
   ],
   declarations: [NgRxFormMaterialGeneratorComponent],
   exports: [NgRxFormMaterialGeneratorComponent]

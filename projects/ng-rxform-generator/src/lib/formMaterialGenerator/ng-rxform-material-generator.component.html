@@ -1,7 +1,6 @@
 <form [formGroup]="form"
-
       class="form">
-    <div class="form-group"
+    <div class="form-control"
          *ngFor="let field of fields">
 
         <!-- Input text -->
@@ -11,17 +10,110 @@
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
                    formControlName="{{field.key}}">
+        </mat-form-field>
+
+        <!-- Textarea -->
+        <mat-form-field *ngIf="field.inputType === 'textarea'">
+            <textarea matInput
+                      formControlName="{{field.key}}"
+                      [readonly]="field.readonly"
+                      [placeholder]="field.placeholder">
+          </textarea>
+        </mat-form-field>
+
+        <!-- Select -->
+        <mat-form-field *ngIf="field.inputType === 'select'">
+            <mat-select *ngIf="!field.multiple"
+                        formControlName="{{field.key}}"
+                        placeholder="{{field.placeholder}}">
+                <mat-option *ngFor="let value of field.options | async"
+                            [value]="value[field.optionKeys.key]">
+                    {{value[field.optionKeys.value]}}
+                </mat-option>
+            </mat-select>
+            <mat-select *ngIf="field.multiple"
+                        formControlName="{{field.key}}"
+                        placeholder="{{field.placeholder}}"
+                        multiple>
+                <mat-option *ngFor="let value of field.options | async"
+                            [value]="value[field.optionKeys.key]">
+                    {{value[field.optionKeys.value]}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Checkbox -->
+        <!-- TO DO -->
+        <!--
+          Label position
+        -->
+        <ng-container *ngIf="field.inputType === 'checkbox'">
+            <mat-checkbox formControlName="{{field.key}}">
+                {{field.label}}
+            </mat-checkbox>
+        </ng-container>
+
+        <!-- Date -->
+        <!-- TO DO -->
+        <!--
+          template variable
+        -->
+        <mat-form-field *ngIf="field.inputType === 'date'">
+            <input matInput
+                   [matDatepicker]="picker"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+            <mat-datepicker-toggle matSuffix
+                                   [for]="picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Number -->
+        <mat-form-field *ngIf="field.inputType === 'number'">
+            <input matInput
+                   [type]="'number'"
+                   [readonly]="field.readonly"
+                   [max]="field.max"
+                   [min]="field.min"
+                   [step]="field.step"
+                   formControlName="{{field.key}}">
+        </mat-form-field>
+
+        <!-- Radio-->
+        <!--
+          Label position
+        -->
+        <mat-radio-group *ngIf="field.inputType === 'radio'"
+                         formControlName="{{field.key}}">
+            <legend *ngIf="field.legend">{{field.legend}}</legend>
+            <mat-radio-button *ngFor="let option of field.options"
+                              value="{{option.value}}">
+                {{option.label || option.value}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <div class="error-message">
+            <!-- TO DO -->
+            <!--
+                    loop through custom validation fields
+                   -->
             <mat-error *ngIf="form.controls[field.key].hasError('required')">{{errorMsg.REQUIRED_FIELD}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('email') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_EMAIL}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('minLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MINLENGTH}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('maxLength') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_MAXLENGTH}}</mat-error>
             <mat-error *ngIf="form.controls[field.key].hasError('pattern') && !form.controls[field.key].hasError('required')">{{errorMsg.INVALID_PATTERN}}</mat-error>
-        </mat-form-field>
-
-
-
-
+        </div>
     </div>
+
+
+
+
+
+
 
 
 </form>
