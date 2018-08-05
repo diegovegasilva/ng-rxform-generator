@@ -6,7 +6,6 @@ export class RxFormGeneratorInput {
   inputType: InputType = 'text';
   value?: any;
   key: string;
-  useMaterial?: boolean;
   fieldType?: TextFieldType;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
@@ -17,7 +16,6 @@ export class RxFormGeneratorInput {
     this.fieldType = options['fieldType'] || 'text';
     this.value = options.value;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;

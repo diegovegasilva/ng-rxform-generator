@@ -7,7 +7,6 @@ export class RxFormGeneratorTextarea {
   inputType: InputType = 'textarea';
   value?: any;
   key: string;
-  useMaterial?: boolean;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -16,7 +15,6 @@ export class RxFormGeneratorTextarea {
   constructor(options: RxFormGeneratorTextareaConfig) {
     this.value = options.value;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;

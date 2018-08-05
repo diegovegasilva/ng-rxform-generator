@@ -8,7 +8,6 @@ export class RxFormGeneratorSelect {
   value?: any;
   key: string;
   inputType: InputType = 'select';
-  useMaterial?: boolean;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -23,7 +22,6 @@ export class RxFormGeneratorSelect {
   constructor(options: RxFormGeneratorSelectConfig) {
     this.value = options.value;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;

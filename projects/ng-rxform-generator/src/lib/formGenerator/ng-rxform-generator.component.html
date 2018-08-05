@@ -4,7 +4,7 @@
          *ngFor="let field of fields">
 
         <!-- Input text -->
-        <ng-container *ngIf="field.inputType === 'text' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'text'">
             <input [type]="field.fieldType"
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
@@ -12,7 +12,7 @@
         </ng-container>
 
         <!-- Textarea -->
-        <ng-container *ngIf="field.inputType === 'textarea' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'textarea'">
             <textarea formControlName="{{field.key}}"
                       [readonly]="field.readonly"
                       [placeholder]="field.placeholder">
@@ -20,7 +20,7 @@
         </ng-container>
 
         <!-- Select -->
-        <ng-container *ngIf="field.inputType === 'select' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'select'">
             <select formControlName="{{field.key}}">
               <option *ngIf="field.placeholder" disabled>
                 {{field.placeholder}}
@@ -33,7 +33,7 @@
         </ng-container>
 
         <!-- Checkbox -->
-        <ng-container *ngIf="field.inputType === 'checkbox' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'checkbox'">
             <label *ngIf="field.label && (!field.labelPosition || field.labelPosition === 'before')"
                    [for]="field.key">{{field.label}}</label>
             <input type="checkbox"
@@ -43,7 +43,7 @@
         </ng-container>
 
         <!-- Date -->
-        <ng-container *ngIf="field.inputType === 'date' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'date'">
             <input [type]="field.fieldType"
                    [readonly]="field.readonly"
                    [max]="field.max"
@@ -53,7 +53,7 @@
         </ng-container>
 
         <!-- Number -->
-        <ng-container *ngIf="field.inputType === 'number' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'number'">
             <input [type]="'number'"
                    [placeholder]="field.placeholder"
                    [readonly]="field.readonly"
@@ -64,7 +64,7 @@
         </ng-container>
 
         <!-- Radio-->
-        <ng-container *ngIf="field.inputType === 'radio' && !field.useMaterial">
+        <ng-container *ngIf="field.inputType === 'radio'">
             <legend *ngIf="field.legend">{{field.legend}}</legend>
             <div class="form-radio-group"
                  *ngFor="let option of field.options">

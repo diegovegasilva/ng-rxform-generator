@@ -7,7 +7,6 @@ export class RxFormGeneratorInputNumber {
   inputType: InputType = 'number';
   value?: number;
   key: string;
-  useMaterial?: boolean;
   fieldType = 'number';
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
@@ -20,7 +19,6 @@ export class RxFormGeneratorInputNumber {
   constructor(options: RxFormGeneratorNumberConfig) {
     this.value = options.value;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;

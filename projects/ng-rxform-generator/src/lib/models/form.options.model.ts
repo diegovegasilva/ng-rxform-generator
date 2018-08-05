@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { InputType, TextFieldType, DateFieldType, LabelPosition } from './types';
+import { InputType, TextFieldType, DateFieldType, LabelPosition, Orientation, TickInterval } from './types';
 import { RxFormGeneratorValidation } from './form.validation.model';
 import { RxFormGeneratorRadioOptions } from './form.radioOptions.model';
 
@@ -8,7 +8,6 @@ export interface RxFormGeneratorInputConfig {
   value?: any;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   fieldType?: TextFieldType;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
@@ -20,7 +19,6 @@ export interface RxFormGeneratorTextareaConfig {
   value?: any;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -31,7 +29,6 @@ export interface RxFormGeneratorSelectConfig {
   value?: any;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -48,7 +45,6 @@ export interface RxFormGeneratorCheckboxConfig {
   value?: boolean;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   label?: string;
   labelPosition?: LabelPosition;
   validators?: RxFormGeneratorValidation[];
@@ -59,7 +55,6 @@ export interface RxFormGeneratorDateConfig {
   value?: any;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   fieldType?: DateFieldType;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -72,7 +67,6 @@ export interface RxFormGeneratorNumberConfig {
   value?: number;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   placeholder?: string;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -82,12 +76,28 @@ export interface RxFormGeneratorNumberConfig {
   step?: number;
 }
 
+export interface RxFormGeneratorSliderConfig {
+  value?: number;
+  key: string;
+  inputType?: InputType;
+  label?: string;
+  thumbLabel?: boolean;
+  tickInterval: TickInterval;
+  validators?: RxFormGeneratorValidation[];
+  disabled?: boolean;
+  readonly?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  orientation?: Orientation;
+  invert: boolean;
+}
+
 export interface RxFormGeneratorRadioConfig {
   options: RxFormGeneratorRadioOptions[];
   value?: any;
   key: string;
   inputType?: InputType;
-  useMaterial?: boolean;
   legend?: string;
   labelPosition?: LabelPosition;
   validators?: RxFormGeneratorValidation[];

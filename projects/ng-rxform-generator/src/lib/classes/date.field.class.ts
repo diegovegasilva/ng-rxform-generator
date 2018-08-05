@@ -7,7 +7,6 @@ export class RxFormGeneratorDate {
   inputType: InputType = 'date';
   value?: any;
   key: string;
-  useMaterial?: boolean;
   fieldType?: DateFieldType;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
@@ -19,7 +18,6 @@ export class RxFormGeneratorDate {
     this.fieldType = options['fieldType'] || 'date';
     this.value = options.value;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;
     this.readonly = !!options.readonly;

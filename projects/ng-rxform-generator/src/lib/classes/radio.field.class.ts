@@ -8,7 +8,6 @@ export class RxFormGeneratorRadio {
   value?: string;
   options: RxFormGeneratorRadioOptions[];
   key: string;
-  useMaterial?: boolean;
   legend?: string;
   labelPosition: LabelPosition;
   validators?: RxFormGeneratorValidation[];
@@ -18,7 +17,6 @@ export class RxFormGeneratorRadio {
     this.value = options.value;
     this.options = options.options;
     this.key = options.key;
-    this.useMaterial = options.useMaterial || false;
     this.legend = options.legend;
     this.labelPosition = options.labelPosition;
     this.validators = options.validators || undefined;
