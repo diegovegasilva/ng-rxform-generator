@@ -43,21 +43,14 @@
         </mat-form-field>
 
         <!-- Checkbox -->
-        <!-- TO DO -->
-        <!--
-          Label position
-        -->
         <ng-container *ngIf="field.inputType === 'checkbox'">
-            <mat-checkbox formControlName="{{field.key}}" labelPosition="{{field.labelPosition}}">
+            <mat-checkbox formControlName="{{field.key}}"
+                          labelPosition="{{field.labelPosition}}">
                 {{field.label}}
             </mat-checkbox>
         </ng-container>
 
         <!-- Date -->
-        <!-- TO DO -->
-        <!--
-          template variable
-        -->
         <mat-form-field *ngIf="field.inputType === 'date'">
             <input matInput
                    [matDatepicker]="picker"
@@ -84,9 +77,6 @@
         </mat-form-field>
 
         <!-- Radio-->
-        <!--
-          Label position
-        -->
         <mat-radio-group *ngIf="field.inputType === 'radio'"
                          formControlName="{{field.key}}">
             <legend *ngIf="field.legend">{{field.legend}}</legend>
@@ -97,6 +87,12 @@
             </mat-radio-button>
         </mat-radio-group>
 
+        <ng-container *ngIf="field.inputType === 'slideToggle'">
+            <mat-slide-toggle formControlName="{{field.key}}"
+                              labelPosition="{{field.labelPosition}}">
+                {{field.label}}
+            </mat-slide-toggle>
+        </ng-container>
         <div class="error-message">
             <!-- TO DO -->
             <!--

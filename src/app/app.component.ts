@@ -7,7 +7,8 @@ import {
   RxFormCheckbox,
   RxFormDate,
   RxFormNumber,
-  RxFormField
+  RxFormField,
+  RxFormSlideToggle
 } from 'ng-rxform-generator';
 import { RxFormRadio } from 'projects/ng-rxform-generator/src/public_api';
 
@@ -80,7 +81,13 @@ export class AppComponent implements OnInit {
         ],
         labelPosition: 'before',
         value: 'call'
-      })
+      }),
+      new RxFormSlideToggle({
+        key: 'legal2',
+        label: 'legal2',
+        labelPosition: 'after',
+        value: true
+      }),
     ];
   }
 }
