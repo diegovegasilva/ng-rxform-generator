@@ -48,7 +48,7 @@
           Label position
         -->
         <ng-container *ngIf="field.inputType === 'checkbox'">
-            <mat-checkbox formControlName="{{field.key}}">
+            <mat-checkbox formControlName="{{field.key}}" labelPosition="{{field.labelPosition}}">
                 {{field.label}}
             </mat-checkbox>
         </ng-container>
@@ -91,7 +91,8 @@
                          formControlName="{{field.key}}">
             <legend *ngIf="field.legend">{{field.legend}}</legend>
             <mat-radio-button *ngFor="let option of field.options"
-                              value="{{option.value}}">
+                              value="{{option.value}}"
+                              labelPosition="{{field.labelPosition}}">
                 {{option.label || option.value}}
             </mat-radio-button>
         </mat-radio-group>

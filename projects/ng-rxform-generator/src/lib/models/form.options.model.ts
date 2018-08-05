@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { InputType, TextFieldType, DateFieldType } from './types';
+import { InputType, TextFieldType, DateFieldType, LabelPosition } from './types';
 import { RxFormGeneratorValidation } from './form.validation.model';
 import { RxFormGeneratorRadioOptions } from './form.radioOptions.model';
 
@@ -50,6 +50,7 @@ export interface RxFormGeneratorCheckboxConfig {
   inputType?: InputType;
   useMaterial?: boolean;
   label?: string;
+  labelPosition?: LabelPosition;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
 }
@@ -88,6 +89,7 @@ export interface RxFormGeneratorRadioConfig {
   inputType?: InputType;
   useMaterial?: boolean;
   legend?: string;
+  labelPosition?: LabelPosition;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
 }

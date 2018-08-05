@@ -1,4 +1,4 @@
-import { InputType } from '../models/types';
+import { InputType, LabelPosition } from '../models/types';
 import { RxFormGeneratorCheckboxConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
@@ -8,6 +8,7 @@ export class RxFormGeneratorCheckbox {
   key: string;
   useMaterial?: boolean;
   label?: string;
+  labelPosition?: LabelPosition;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
 
@@ -16,6 +17,7 @@ export class RxFormGeneratorCheckbox {
     this.key = options.key;
     this.useMaterial = options.useMaterial || false;
     this.label = options.label;
+    this.labelPosition = options.labelPosition;
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;
   }

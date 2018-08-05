@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
       new RxFormCheckbox({
         key: 'legal',
         label: 'legal',
+        labelPosition: 'before',
         value: false
       }),
       new RxFormDate({
@@ -77,6 +78,7 @@ export class AppComponent implements OnInit {
           { value: 'mail', label: 'email' },
           { value: 'call' }
         ],
+        labelPosition: 'before',
         value: 'call'
       })
     ];

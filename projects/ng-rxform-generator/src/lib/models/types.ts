@@ -27,7 +27,7 @@ export type TextFieldType =
   | 'file'
   | 'color';
 
-  export type DateFieldType =
+export type DateFieldType =
   | 'date'
   | 'datetime'
   | 'datetime-local'
@@ -45,8 +45,9 @@ export type FieldValidation =
   | 'minLength'
   | 'maxLength';
 
+export type LabelPosition = 'after' | 'before';
 
-  export type RxFormField =
+export type RxFormField =
   | RxFormGeneratorCheckbox
   | RxFormGeneratorDate
   | RxFormGeneratorInput

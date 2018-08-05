@@ -34,10 +34,12 @@
 
         <!-- Checkbox -->
         <ng-container *ngIf="field.inputType === 'checkbox' && !field.useMaterial">
-            <label *ngIf="field.label"
+            <label *ngIf="field.label && (!field.labelPosition || field.labelPosition === 'before')"
                    [for]="field.key">{{field.label}}</label>
             <input type="checkbox"
                    formControlName="{{field.key}}" />
+            <label *ngIf="field.label && field.labelPosition === 'after'"
+                   [for]="field.key">{{field.label}}</label>
         </ng-container>
 
         <!-- Date -->
@@ -66,10 +68,11 @@
             <legend *ngIf="field.legend">{{field.legend}}</legend>
             <div class="form-radio-group"
                  *ngFor="let option of field.options">
-                <label>{{option.label || option.value}}</label>
+                <label *ngIf="!field.labelPosition || field.labelPosition === 'before'">{{option.label || option.value}}</label>
                 <input type="radio"
                        [value]="option.value"
                        formControlName="{{field.key}}" />
+                <label *ngIf="field.labelPosition === 'after'">{{option.label || option.value}}</label>
             </div>
         </ng-container>
 

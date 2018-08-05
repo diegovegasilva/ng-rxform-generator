@@ -1,4 +1,4 @@
-import { InputType } from '../models/types';
+import { InputType, LabelPosition } from '../models/types';
 import { RxFormGeneratorRadioConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 import { RxFormGeneratorRadioOptions } from '../models/form.radioOptions.model';
@@ -10,6 +10,7 @@ export class RxFormGeneratorRadio {
   key: string;
   useMaterial?: boolean;
   legend?: string;
+  labelPosition: LabelPosition;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
 
@@ -19,6 +20,7 @@ export class RxFormGeneratorRadio {
     this.key = options.key;
     this.useMaterial = options.useMaterial || false;
     this.legend = options.legend;
+    this.labelPosition = options.labelPosition;
     this.validators = options.validators || undefined;
     this.disabled = !!options.disabled;
   }
