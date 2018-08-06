@@ -82,15 +82,14 @@ export interface RxFormGeneratorSliderConfig {
   inputType?: InputType;
   label?: string;
   thumbLabel?: boolean;
-  tickInterval: TickInterval;
+  tickInterval?: TickInterval;
   validators?: RxFormGeneratorValidation[];
   disabled?: boolean;
-  readonly?: boolean;
   min?: number;
   max?: number;
   step?: number;
   orientation?: Orientation;
-  invert: boolean;
+  invert?: boolean;
 }
 
 export interface RxFormGeneratorRadioConfig {

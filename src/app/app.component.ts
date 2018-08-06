@@ -8,9 +8,11 @@ import {
   RxFormDate,
   RxFormNumber,
   RxFormField,
-  RxFormSlideToggle
+  RxFormSlideToggle,
+  RxFormRadio,
+  RxFormSlider
 } from 'ng-rxform-generator';
-import { RxFormRadio } from 'projects/ng-rxform-generator/src/public_api';
+import { timeInterval } from '../../node_modules/rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -87,6 +89,14 @@ export class AppComponent implements OnInit {
         label: 'legal2',
         labelPosition: 'after',
         value: true
+      }),
+      new RxFormSlider({
+        key: 'qty2',
+        max: 10,
+        min: 2,
+        step: 0.5,
+        value: 5,
+        thumbLabel: true,
       }),
     ];
   }

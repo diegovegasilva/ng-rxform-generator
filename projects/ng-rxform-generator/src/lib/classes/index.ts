@@ -6,6 +6,7 @@ import { RxFormGeneratorSelect } from './select.field.class';
 import { RxFormGeneratorTextarea } from './textarea.field.class';
 import { RxFormGeneratorRadio } from './radio.field.class';
 import { RxFormGeneratorSlideToggle } from './slideToggle.field.class';
+import { RxFormGeneratorSlider } from './slider.field.class';
 
 
 export const RxFormCheckbox = RxFormGeneratorCheckbox;
@@ -16,3 +17,4 @@ export const RxFormSelect = RxFormGeneratorSelect;
 export const RxFormTextarea = RxFormGeneratorTextarea;
 export const RxFormRadio = RxFormGeneratorRadio;
 export const RxFormSlideToggle = RxFormGeneratorSlideToggle;
+export const RxFormSlider = RxFormGeneratorSlider;

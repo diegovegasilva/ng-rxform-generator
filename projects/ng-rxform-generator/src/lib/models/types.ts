@@ -15,7 +15,8 @@ export type InputType =
   | 'textarea'
   | 'date'
   | 'number'
-  | 'slideToggle';
+  | 'slideToggle'
+  | 'slider';
 
 export type TextFieldType =
   | 'text'
@@ -46,6 +47,10 @@ export type FieldValidation =
   | 'maxLength';
 
 export type LabelPosition = 'after' | 'before';
+
+export type Orientation = 'horizontal' | 'vertical';
+
+export type TickInterval = number | 'auto';
 
 export type RxFormField =
   | RxFormGeneratorCheckbox

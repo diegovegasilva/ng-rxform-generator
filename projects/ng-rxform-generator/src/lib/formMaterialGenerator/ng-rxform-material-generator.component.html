@@ -87,11 +87,25 @@
             </mat-radio-button>
         </mat-radio-group>
 
+        <!-- SlideToggle-->
         <ng-container *ngIf="field.inputType === 'slideToggle'">
             <mat-slide-toggle formControlName="{{field.key}}"
                               labelPosition="{{field.labelPosition}}">
                 {{field.label}}
             </mat-slide-toggle>
+        </ng-container>
+
+        <!-- Slider -->
+        <ng-container *ngIf="field.inputType === 'slider'">
+            <mat-slider formControlName="{{field.key}}"
+                        [invert]="field.invert"
+                        [max]="field.max"
+                        [min]="field.min"
+                        [step]="field.step"
+                        [thumbLabel]="field.thumbLabel"
+                        [tickInterval]="field.tickInterval"
+                        [vertical]="field.orientation === 'vertical'">
+            </mat-slider>
         </ng-container>
         <div class="error-message">
             <!-- TO DO -->
