@@ -23,18 +23,9 @@
 
         <!-- Select -->
         <mat-form-field *ngIf="field.inputType === 'select'">
-            <mat-select *ngIf="!field.multiple"
-                        formControlName="{{field.key}}"
-                        placeholder="{{field.placeholder}}">
-                <mat-option *ngFor="let value of field.options | async"
-                            [value]="value[field.optionKeys.key]">
-                    {{value[field.optionKeys.value]}}
-                </mat-option>
-            </mat-select>
-            <mat-select *ngIf="field.multiple"
-                        formControlName="{{field.key}}"
+            <mat-select formControlName="{{field.key}}"
                         placeholder="{{field.placeholder}}"
-                        multiple>
+                        multiple="{{field.multiple}}">
                 <mat-option *ngFor="let value of field.options | async"
                             [value]="value[field.optionKeys.key]">
                     {{value[field.optionKeys.value]}}

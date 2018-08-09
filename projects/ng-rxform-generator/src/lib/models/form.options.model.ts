@@ -26,7 +26,7 @@ export interface RxFormGeneratorTextareaConfig {
 }
 
 export interface RxFormGeneratorSelectConfig {
-  value?: any;
+  value?: any | any[];
   key: string;
   inputType?: InputType;
   placeholder?: string;

@@ -55,12 +55,13 @@ export class AppComponent implements OnInit {
         options: this.selectOptions,
         placeholder: 'select one option',
         validators: [{ type: 'required' }],
+        value : 2
       }),
       new RxFormCheckbox({
         key: 'legal',
         label: 'legal',
         labelPosition: 'before',
-        value: false
+        value: false,
       }),
       new RxFormDate({
         key: 'date',

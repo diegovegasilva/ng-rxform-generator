@@ -5,7 +5,7 @@ import { RxFormGeneratorSelectConfig } from '../models/form.options.model';
 import { RxFormGeneratorValidation } from '../models/form.validation.model';
 
 export class RxFormGeneratorSelect {
-  value?: any;
+  value?: any | any[];
   key: string;
   inputType: InputType = 'select';
   placeholder?: string;
@@ -20,7 +20,10 @@ export class RxFormGeneratorSelect {
   };
 
   constructor(options: RxFormGeneratorSelectConfig) {
-    this.value = options.value;
+    this.value =
+      options.multiple && !Array.isArray(options.value)
+        ? [options.value]
+        : options.value;
     this.key = options.key;
     this.placeholder = options.placeholder || '';
     this.validators = options.validators || undefined;
@@ -32,7 +35,7 @@ export class RxFormGeneratorSelect {
       this.options = of(this.options);
     }
     this.optionKeys = options.optionKeys;
-    if (!this.value && this.placeholder) {
+    if (!this.value && this.placeholder && !options.multiple) {
       this.value = this.placeholder;
     }
   }

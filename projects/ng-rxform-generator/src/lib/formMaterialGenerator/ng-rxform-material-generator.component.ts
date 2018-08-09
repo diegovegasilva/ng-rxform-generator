@@ -17,6 +17,7 @@ import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
 import { errorMsg } from '../errors/error.enum';
 import { Subscription } from 'rxjs';
 import { isEqual } from '../utils/utils';
+import { RxFormGeneratorSelect } from '../classes/select.field.class';
 
 @Component({
   selector: 'rxf-mat-generator',
@@ -33,7 +34,7 @@ export class NgRxFormMaterialGeneratorComponent implements OnInit, OnDestroy {
   originalValues = {};
   errorMsg;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.errorMsg = errorMsg;

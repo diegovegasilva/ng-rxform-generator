@@ -21,7 +21,20 @@
 
         <!-- Select -->
         <ng-container *ngIf="field.inputType === 'select'">
-            <select formControlName="{{field.key}}">
+            <select formControlName="{{field.key}}"
+                    *ngIf="!field.multiple">
+              <option *ngIf="field.placeholder" disabled>
+                {{field.placeholder}}
+              </option>
+            <option *ngFor="let value of field.options | async"
+                        [value]="value[field.optionKeys.key]">
+              {{value[field.optionKeys.value]}}
+            </option>
+          </select>
+
+            <select formControlName="{{field.key}}"
+                    *ngIf="field.multiple"
+                    multiple>
               <option *ngIf="field.placeholder" disabled>
                 {{field.placeholder}}
               </option>
